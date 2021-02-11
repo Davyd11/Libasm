@@ -6,24 +6,42 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 12:59:17 by dpuente-          #+#    #+#              #
-#    Updated: 2021/02/06 13:33:35 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/02/11 19:18:09 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		= 	main.c \
-				src/ft_read.s src/ft_strcmp.s src/ft_strcpy.s \
-				src/ft_strdup.s src/ft_strlen.s src/ft_write.s \
+SRCS		=	srcs/ft_strlen.s srcs/ft_strcpy.s
 
-BONUS		=	bonus/ft_atoi_base.s bonus/ft_list_push_front.s \
-				bonus/ft_list_remove_if.s bonus/ft_list_size.s \
-				bonus/ft_list_sort.s \
+BONUS		=	
 
-OBJS		= $(SRCS:.c=.o)
+TEST		=	#por ahora no hay nada para testear. falta anadirlo a fclean como a la funcion de testear
 
-all:
+
+SRC_OBJS		=	$(SRCS:.s=.o)
+BONUS_OBJS		=	$(BONUS:.s=.o)
+
+
+NA				=	nasm
+NA_FLAGS		=	-f macho64
+FLAGS			=	-Wall -Wextra -Werror
+NAME			=	libasm.a
+
+%.o:			%.s
+				$(NA) $(NA_FLAGS) $<
+
+$(NAME):		$(SRC_OBJS)
+
+all:			$(NAME)
+
+main:
+				gcc $(SRC_OBJS) main.c
 
 clean:
+				rm -rf $(NAME) $(SRC_OBJS) *.out
 
-fclean:
+fclean:			clean
+				rm -rf $(NAME) $(BONUS)
 
-re:
+re:				fclean $(NAME)
+
+.PHONY:			all fclean clean re
