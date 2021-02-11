@@ -6,11 +6,11 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 12:59:17 by dpuente-          #+#    #+#              #
-#    Updated: 2021/02/11 19:18:09 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/02/11 20:51:57 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	srcs/ft_strlen.s srcs/ft_strcpy.s
+SRCS		=	srcs/ft_strlen.s srcs/ft_strcpy.s srcs/ft_strdup.s
 
 BONUS		=	
 
@@ -30,6 +30,7 @@ NAME			=	libasm.a
 				$(NA) $(NA_FLAGS) $<
 
 $(NAME):		$(SRC_OBJS)
+				ar rcs $(NAME) $(SRC_OBJS)
 
 all:			$(NAME)
 
@@ -37,7 +38,7 @@ main:
 				gcc $(SRC_OBJS) main.c
 
 clean:
-				rm -rf $(NAME) $(SRC_OBJS) *.out
+				rm -rf $(NAME) $(SRC_OBJS) libasm.a a.out
 
 fclean:			clean
 				rm -rf $(NAME) $(BONUS)

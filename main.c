@@ -6,7 +6,7 @@
 /*   By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 13:08:08 by dpuente-          #+#    #+#             */
-/*   Updated: 2021/02/11 19:39:27 by dpuente-         ###   ########.fr       */
+/*   Updated: 2021/02/11 20:12:14 by dpuente-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -199,7 +199,7 @@ void check_strcpy()
 	close(fd);
 }*/
 
-/*void check_strdup()
+void check_strdup()
 {
 	char *hello_world = "Hello world !";
 	char *empty = "";
@@ -230,19 +230,7 @@ void check_strcpy()
 	free(save2);
 	save2 = NULL;
 	printf("\n");
-
-	// ------- NULL = SEGFAULT
-	// printf("%-20s: NULL\n", "char *");
-	// save = strdup(NULL);
-	// printf("%-20s: \"%s\"\n", "libc", save);
-	// free(save);
-	// save = NULL;
-	// save2 = ft_strdup(NULL);
-	// printf("%-20s: \"%s\"\n", "libasm", save2);
-	// free(save2);
-	// save2 = NULL;
-	// printf("\n");
-}*/
+}
 
 int main()
 {
@@ -251,5 +239,5 @@ int main()
 	//check_strcmp();
 	//check_write();
 	//check_read();
-	//check_strdup();
+	check_strdup();
 }
