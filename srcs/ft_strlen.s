@@ -12,4 +12,3 @@ loop:
 			cmp byte[rdi + rax], 0
 			jne loop
 			ret
-			

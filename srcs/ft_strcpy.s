@@ -1,7 +1,6 @@
 section .text
 global _ft_strcpy
 
-extern _malloc
 extern _ft_strlen
 
 _ft_strcpy:

@@ -6,7 +6,7 @@
 /*   By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 13:08:08 by dpuente-          #+#    #+#             */
-/*   Updated: 2021/02/11 20:12:14 by dpuente-         ###   ########.fr       */
+/*   Updated: 2021/02/22 11:32:50 by dpuente-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void check_strcpy()
 
 }
 
-/*void check_strcmp()
+void check_strcmp()
 {
 	char *empty = "";
 	char *hello_world = "Hello world !";
@@ -105,16 +105,15 @@ void check_strcpy()
 	printf("%-20s: \"%d\"\n", "libc", strcmp(hello_world2, empty));
 	printf("%-20s: \"%d\"\n", "libasm", ft_strcmp(hello_world2, empty));
 	printf("\n");
+	printf("%-20s: \"%s\"\n", "char *", "wh");
+	printf("%-20s: \"%s\"\n", "compared to", "ww");
+	printf("%-20s: \"%d\"\n", "libc", strcmp("wh", "ww"));
+	printf("%-20s: \"%d\"\n", "libasm", ft_strcmp("wh", "ww"));
+	printf("\n");
 
-	// ------- NULL = SEGFAULT
-	// printf("%-20s: \"%s\"\n", "char *", hello_world2);
-	// printf("%-20s: %s\n", "compared to", "NULL");
-	// printf("%-20s: \"%d\"\n", "libc", strcmp(NULL, hello_world2));
-	// printf("%-20s: \"%d\"\n", "libasm", ft_strcmp(NULL, empty));
-	// printf("\n");
-}*/
+}
 
-/*void check_write()
+void check_write()
 {
 	char *hello_world = "Coucou\n";
 	char *empty = "";
@@ -138,9 +137,9 @@ void check_strcpy()
 	printf("%-20s: \"Libasm:%zu\"\n", "libasm", ft_write(-7, NULL, 7));
 	// printf("\n");
 	
-}*/
+}
 
-/*void check_read()
+void check_read()
 {
 	int fd = open("main.c", O_RDONLY);
 	char buff1[891];
@@ -197,7 +196,7 @@ void check_strcpy()
 	printf("\n");
 	clear_buffer(buff1, 891);
 	close(fd);
-}*/
+}
 
 void check_strdup()
 {
@@ -236,8 +235,8 @@ int main()
 {
 	check_strlen();
 	check_strcpy();
-	//check_strcmp();
-	//check_write();
-	//check_read();
+	check_strcmp();
+	check_write();
+	check_read();
 	check_strdup();
 }
