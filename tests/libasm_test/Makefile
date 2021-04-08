@@ -6,11 +6,11 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/08 03:06:59 by cacharle          #+#    #+#              #
-#    Updated: 2021/04/07 12:52:01 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/04/08 09:12:19 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBASM_PATH = ../..
+LIBASM_PATH = ../../../Libasm_42/
 
 RM = rm -fv
 MAKE = make --no-print-directory

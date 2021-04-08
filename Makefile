@@ -6,16 +6,14 @@
 #    By: dpuente- <dpuente-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/06 12:59:17 by dpuente-          #+#    #+#              #
-#    Updated: 2021/02/16 21:16:31 by dpuente-         ###   ########.fr        #
+#    Updated: 2021/04/08 10:23:53 by dpuente-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		=	srcs/ft_strlen.s srcs/ft_strcpy.s srcs/ft_strdup.s \
 				srcs/ft_strcmp.s srcs/ft_write.s srcs/ft_read.s \
 
-BONUS		=	
-
-TEST		=	#por ahora no hay nada para testear. falta anadirlo a fclean como a la funcion de testear
+BONUS		=	# No bonus jet
 
 
 SRC_OBJS		=	$(SRCS:.s=.o)

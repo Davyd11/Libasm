@@ -1,17 +1,24 @@
 segment .text
-	global _ft_write		; ft_write (rdi, rsi, rdx)
+global _ft_write
+extern ___error
 
+; ft_write (rdi, rsi, rdx)
 _ft_write:
-	mov r8, rdx				; save rdx = len in r8
-	mov rax, 0x2000004		; set call to write
-    syscall					; call rax (write)
-	jc exit_error			; if doesn't work, write set flags carry to 1 so jmp exit error
-	jmp exit				; jump exit
+	mov r8, rdx
+	mov rax, 0x2000004
+    syscall
+	jc exit_error
+	jmp exit
 
 exit_error:
-	mov rax, -1				; set return to -1
-	ret						; return
+	push rax
+	call ___error
+	mov rdx, rax
+	pop rax
+	mov [rdx], rax
+	mov rax, -1
+	ret
 
 exit:
-	mov rax, r8				; set previous value of rdx save in r8, in return value
+	mov rax, r8
 	ret	
